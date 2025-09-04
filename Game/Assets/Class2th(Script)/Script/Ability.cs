@@ -1,12 +1,15 @@
 using UnityEngine;
-
-public class Ability : MonoBehaviour
+[System.Serializable]
+public class Ability
 {
+    [SerializeField] int strength = 5;
 
-    public int strength = 5;
+   // public int Strength { get {  }  }
 
     public Ability()
     {
+
+
         Debug.Log("Created Ability");
 
 

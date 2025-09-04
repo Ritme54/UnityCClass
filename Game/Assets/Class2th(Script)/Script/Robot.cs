@@ -3,8 +3,8 @@ using UnityEngine.Rendering.Universal;
 
 public class Robot : MonoBehaviour
 {
-
-    public Ability ability;
+    [SerializeField] Ability ability;
+   
 
 
 
@@ -13,9 +13,11 @@ public class Robot : MonoBehaviour
      //객체가 비활성화 되어있을 때에도 호출되며,
      //단 한번만 호출되는 이벤트 함수이다.
         
-        ability = new Ability();
+        //ability = new Ability();
 
         Debug.Log("Awake");
+
+    //    Debug.Log(ability.Strength);
 
     }
     private void OnEnable()
