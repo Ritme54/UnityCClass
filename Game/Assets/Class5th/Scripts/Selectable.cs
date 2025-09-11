@@ -1,26 +1,30 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Selectable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
-
-
+public class Selectable : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI titleText;
 
-    public void OnPointerEnter(PointerEventData eventData)
+    private void Awake()
     {
-        Image.ReferenceEquals(Color.green, IconSize.Large);
-
+        titleText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void Enter()
     {
-        throw new System.NotImplementedException();
+        titleText.fontSize = 100;
     }
-    public void OnPointerDown(PointerEventData eventData)
+    public void Exit()
     {
-        
+        titleText.fontSize = 75;
+    }
+    public void Down()
+    {
+        titleText.fontSize = 50;
+    }
 
-    }
 }
